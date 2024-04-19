@@ -1,0 +1,54 @@
+.margen {
+    margin-bottom: 35px;
+}
+.margen-top{
+    margin-top: 50px;
+}
+
+.fondo-body{
+    background-color: rgb(221, 218, 218);
+}
+
+.header{
+    background-color: #fcfbfb; /* Color de fondo del encabezado */
+    position: fixed; /* Fija el encabezado en la parte superior de la ventana */
+    width: 100%; /* Ancho completo del encabezado */
+    top: 0; /* Fija el encabezado en la parte superior de la ventana */
+    left: 0; /* Fija el encabezado en la parte izquierda de la ventana */
+    z-index: 1000; /* Asegura que el encabezado esté en la capa superior */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.textos {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.textos h2 {
+    margin: 0;
+}
+
+.textos p {
+    margin: 5px 0;
+}
+
+.main {
+    margin-top: 70px; /* Ajusta este valor según la altura de tu encabezado */
+}
