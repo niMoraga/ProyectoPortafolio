@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <!-- Enlaza Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets">
+    <link rel="stylesheet" href="../contactanos/contactanos.jsx">
+</head>
+
+<body class="fondo-body">
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="../assets/logo2.jpg" alt="" class="logo logo-container">
+                <div class="textos">
+                    <h5>Master Court</h5>
+                    <p>Master Court - Maipú</p>
+                </div>
+                <div class="menu ">
+                    <a href="#" class="menu-item">Home</a>
+                    <a href="#" class="menu-item">Sobre nosotros</a>
+                    <a href="#" class="menu-item">Agendar</a>
+                    <a href="#" class="menu-item">Contactanos</a>
+                </div>
+            </div>
+        </div>
+    </header>    
+    <main class="main">
+    <div class="container ">
+        <form id="myForm">
+            <br>
+            <h1>Contáctanos</h1>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-12">
+                        <div class="mb-6">
+                            <div class="mb-1">
+                                <input type="text" class="form-control margen" id="nombre" placeholder="Nombre:" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control margen" id="email" placeholder="Correo:" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control margen" id="number" placeholder="Numero de contacto:" required>
+                            </div>
+                            <div class="mb-1">
+                                <textarea class="form-control margen" id="consulta" rows="3" placeholder="Ingrese acá su consulta:" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-12">
+                        <div class="mb-6">
+                            <div class="mb-1">
+                                <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.621632532277!2d-70.76009198600438!3d-33.50263763628067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c32c607a8089%3A0x9e019ef32b3eca6f!2sAv.%20Los%20Pajaritos%202605%2C%209250749%20Maip%C3%BA%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1713984183606!5m2!1ses!2scl" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="mb-12">
+                        <div class="mb-6">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    
+                                <button class="btn btn-primary" type="submit" id="enviar" disabled>Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        
+        
+        
+</main>
+    
+
+    <!-- Enlaza jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Enlaza Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <!-- Enlaza Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Tu script personalizado -->
+    <script src="../formulario-contacto/contactForm.js"></script>
+</body>
+</html>
+
