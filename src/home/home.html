@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <!-- Enlaza Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets">
+    <link rel="stylesheet" href="../home/home.js">
+    <link href="ruta/a/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="fondo-body">
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="../assets/logo2.jpg" alt="" class="logo logo-container">
+                <div class="textos">
+                    <h5>Master Court</h5>
+                    <p>Master Court - Maipú</p>
+                </div>
+                <div class="menu ">
+                    <a href="../home/home.html" class="menu-item">Home</a>
+                    <a href="#" class="menu-item">Sobre nosotros</a>
+                    <a href="#" class="menu-item">Agendar</a>
+                    <a href="../contactanos/contacanos.html" class="menu-item">Contactanos</a>
+                </div>
+            </div>
+        </div>
+    </header>    <br>
+    <main class="main  fondo-cr">
+        <div class="container ">
+            <div class="row justify-content-center">       
+                    <div class="carousel">
+                        <div class="carousel-slide active ">
+                            <img src="../assets/barberia1.jpg" alt="Imagen 1 " id="imagen-barbero1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/barberia2.jpg" alt="Imagen 2" id="imagen-barbero2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/barberia3.jpg" alt="Imagen 3" id="imagen-barbero3">
+                        </div>
+                        <button class="prev-slide"></button>
+                        <button class="next-slide"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div>
+        <h1>¿Con qué profesional te quieres atender?</h1>
+        <div class="image-container">
+            <div class="image-with-text" id="barbero1">
+                <a href="#" class="professional-link">
+                    <img src="../assets/barberPedro.jpg" alt="Barbero 1" data-barbero="Pedro">
+                    <p>Pedro</p>
+                </a>
+            </div>
+            <div class="image-with-text" id="barbero2">
+                <a href="#" class="professional-link">
+                    <img src="../assets/barberJuan.jpg" alt="Barbero 2" data-barbero="Juan">
+                    <p>Juan</p>
+                </a>
+            </div>
+            <div class="image-with-text" id="barbero3">
+                <a href="#" class="professional-link">
+                    <img src="../assets/barberDiego.jpg" alt="Barbero 3" data-barbero="Diego">
+                    <p>Diego</p>
+                </a>
+            </div>
+        </div>
+        <div class="additional-info" id="additional-info">
+            <!-- Información adicional que se mostrará cuando se seleccione un barbero -->
+            <div class="container">
+            <div class="row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Servicio: Cabello</h5>
+                      <p class="card-text">Valor: $7000</p>
+                      <a href="#" class="btn btn-primary agregar-servicio" data-nombre="Cabello" data-valor="$7000">Agregar Servicio</a>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Servicio: Cabello + Peinado</h5>
+                      <p class="card-text">Valor: $8000</p>
+                      <a href="#" class="btn btn-primary agregar-servicio" data-nombre="Cabello" data-valor="$8000">Agregar Servicio</a>
+
+                    </div>
+                  </div>
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Servicio: Barba</h5>
+                      <p class="card-text">Valor: $8000</p>
+                      <a href="#" class="btn btn-primary agregar-servicio" data-nombre="Cabello" data-valor="$8000">Agregar Servicio</a>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Servicio: Cabello + Barba</h5>
+                      <p class="card-text">Valor: $10000</p>
+                      <a href="#" class="btn btn-primary agregar-servicio" data-nombre="Cabello" data-valor="$10000">Agregar Servicio</a>
+
+                    </div>
+                  </div>
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Servicio: Cabello + Barba + Peinado</h5>
+                      <p class="card-text">Valor: $11000</p>
+                      <a href="#" class="btn btn-primary agregar-servicio" data-nombre="Cabello" data-valor="$11000">Agregar Servicio</a>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Servicio: Cabello + Barba + Peinado + Cejas</h5>
+                      <p class="card-text">Valor: $13000</p>
+                      <a href="#" class="btn btn-primary agregar-servicio" data-nombre="Cabello" data-valor="$13000">Agregar Servicio</a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+       <!-- Modal -->
+       <div class="modal fade" id="servicioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detalles del Servicio</h5>
+                    <!-- Añade el botón de cierre con el icono '×' -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="nombreBarbero"></p>
+                    <p id="nombreServicio"></p>
+                    <p id="valorServicio"></p>
+                </div>
+                <div class="modal-footer">
+                    <!-- Añade un botón personalizado -->
+                    <button type="button" class="btn btn-primary" id="confirmar-agendar">Confirmar selección y agendar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  
+
+
+        
+          
+    
+    
+
+    <!-- Enlaza jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Enlaza Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <!-- Enlaza Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Tu script personalizado -->
+    <script src="../formulario-contacto/contactForm.js"></script>
+    <script src="../home/home.js"></script>
+
+    
+</body>
+</html>

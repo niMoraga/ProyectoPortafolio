@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,83 +22,90 @@
                     <p>Master Court - Maipú</p>
                 </div>
                 <div class="menu ">
-                    <a href="#" class="menu-item">Home</a>
+                    <a href="../home/home.html" class="menu-item">Home</a>
                     <a href="#" class="menu-item">Sobre nosotros</a>
                     <a href="#" class="menu-item">Agendar</a>
-                    <a href="#" class="menu-item">Contactanos</a>
+                    <a href="../contactanos/contacanos.html" class="menu-item">Contactanos</a>
                 </div>
             </div>
         </div>
-    </header>    
+    </header>
     <main class="main">
-    <div class="container ">
-        <form id="myForm">
-       <br> <h1 >Datos de contacto:</h1><br>
-        <div class="row">
-            
-            <div class="col-md-6">
-                
-                <div class="mb-12">
-                    <div class="mb-6">
-                        <div class="mb-1">
-                            <input type="text" class="form-control margen" id="nombre" placeholder="Nombre:" required>
+        <div class="container ">
+            <form id="ReservaForm">
+                <br>
+                <h1>Datos de contacto:</h1><br>
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <div class="mb-12">
+                            <div class="mb-6">
+                                <div class="mb-1">
+                                    <input type="text" class="form-control margen" id="nombre" placeholder="Nombre:"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control margen" id="email" placeholder="Apellido:"
+                                        required>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control margen" id="email" placeholder="Apellido:" required>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-12">
+                            <div class="mb-6">
+                                <div class="mb-1">
+                                    <input type="email" class="form-control margen" id="apellido" placeholder="Email:"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control margen" id="telefono" placeholder="Teléfono:"
+                                        required>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mb-12">
-                    <div class="mb-6">
-                        <div class="mb-1">
-                            <input type="email" class="form-control margen" id="apellido" placeholder="Email:" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control margen" id="telefono" placeholder="Teléfono:" required>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-12">
+                            <div class="mb-6">
+                                <div class="mb-1">
+                                    <input type="text" class="form-control margen" id="edad" placeholder="Edad"
+                                        required>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mb-12">
-                    <div class="mb-6">
-                        <div class="mb-1">
-                            <input type="text" class="form-control margen" id="edad" placeholder="Edad" required>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-12">
+                            <div class="mb-6">
+                                <div class="mb-1">
+                                    <textarea class="form-control margen" id="observaciones" rows="3"
+                                        placeholder="Observaciones:       " required></textarea>
+                                </div>
+                            </div>
                         </div>
+                    </div>
                 </div>
-            </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="mb-12">
-                    <div class="mb-6">
-                        <div class="mb-1">
-                            <textarea class="form-control margen" id="observaciones" rows="3" placeholder="Observaciones:       " required></textarea>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-12">
+                            <div class="mb-6">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-primary" type="submit" id="submitButton">Reservar</button>
+                                </div>
+                            </div>
                         </div>
+                    </div>
                 </div>
-            </div>
-            </div>
+            </form>    
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="mb-12">
-                    <div class="mb-6">
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button class="btn btn-primary" type="submit" id="submitButton" disabled>Reservar</button>
-                          </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-</form>
-</main>
-    
+    </main>
+
 
     <!-- Enlaza jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -110,5 +116,6 @@
     <!-- Tu script personalizado -->
     <script src="../formulario-contacto/contactForm.js"></script>
 </body>
+
 </html>
 

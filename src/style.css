@@ -75,3 +75,111 @@
     height: 300px;
     width: 600px;
 }
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 90%; /* Ajusta el ancho del carrusel según tus necesidades */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+.prev-slide,
+.next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color:transparent;
+    color: rgb(238, 238, 238);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.prev-slide {
+    left: 0;
+}
+
+.next-slide {
+    right: 0;
+}
+.img-cr{
+    width: 100%;
+    height: 400px;
+}
+.fondo-cr{
+    background-color: rgb(233, 226, 226);
+}
+div h1 {
+    text-align: center; /* Esto centrará horizontalmente el texto */
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Esto centrará horizontalmente los elementos */
+    align-items: center;
+}
+
+
+
+
+
+.image-with-text img {
+    width: 90px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: 90px;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    overflow: hidden; /* Para ocultar cualquier parte de la imagen que se salga del círculo */
+    margin-left: 50px;
+}
+
+
+.image-with-text p {
+    margin-top: 10px;
+    font-size: 16px; /* Ajusta el tamaño del texto según tus necesidades */
+    margin-left: 75px;
+}
+
+/* Estilos para los enlaces */
+.image-with-text a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Cambia el cursor al pasar por encima del enlace */
+.image-with-text a:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.additional-info {
+    display: none; /* Oculta la información adicional por defecto */
+}
+
+.fechahora {
+    width: 400px; /* Ancho deseado */
+    margin: 0 auto; /* Esto centrará horizontalmente el elemento */
+}
+
+#calendario {
+    width: 600px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
