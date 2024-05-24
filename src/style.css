@@ -152,7 +152,7 @@ div h1 {
 
 .image-with-text p {
     margin-top: 10px;
-    font-size: 16px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-size: 16px; 
     margin-left: 75px;
 }
 
@@ -178,8 +178,38 @@ div h1 {
 }
 
 #calendario {
-    width: 600px;
-    height: 500px;
+    width: 1000px; /* Ajusta el tamaño según sea necesario */
+    height: 900px; /* Ajusta el tamaño según sea necesario */
     margin-left: auto;
     margin-right: auto;
+}
+
+.fc-event-time, .fc-event-title {
+    font-size: 1rem; /* Ajusta el tamaño de fuente si es necesario */
+}
+
+.fc .fc-timegrid-slot {
+    height: 10px; /* Ajusta la altura de los slots de tiempo */
+}
+
+.fondo-admin{
+    background-color: rgb(48, 132, 143);
+}
+
+body, html {
+    height: 100%;
+}
+.login-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #e6d6d6;
 }

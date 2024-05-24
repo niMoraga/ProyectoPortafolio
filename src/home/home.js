@@ -103,50 +103,142 @@ var nombreBarbero = localStorage.getItem("selectedBarber");
         }
 
 
+        
+        
         document.addEventListener("DOMContentLoaded", function() {
+            const slides = document.querySelectorAll(".carousel-slide");
+            let currentSlide = 0;
+        
+            function showSlide(slideIndex) {
+                slides.forEach(function(slide) {
+                    slide.classList.remove("active");
+                });
+                slides[slideIndex].classList.add("active");
+            }
+        
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+        
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+        
+            const prevButton = document.querySelector(".prev-slide");
+            const nextButton = document.querySelector(".next-slide");
+        
+            prevButton.addEventListener("click", prevSlide);
+            nextButton.addEventListener("click", nextSlide);
+        
+            // Cambiar automáticamente cada 5 segundos (5000 milisegundos)
+            setInterval(nextSlide, 5000);
+        
+            // Captura el nombre del barbero seleccionado cuando se hace clic en un enlace de barbero.
+            var nombreBarbero = "";
+            $(".professional-link").click(function() {
+                nombreBarbero = $(this).find("img").data("barbero");
+                localStorage.setItem("selectedBarber", nombreBarbero); // Guarda el nombre del barbero en el almacenamiento local
+            });
+        
+            // Al hacer clic en el botón de confirmar y agendar, redirige a la siguiente página
+            $("#confirmar-agendar").click(function() {
+                window.location.href = "../home/fechayhora.html";
+            });
+        
+    // Código para el calendario
             var calendarEl = document.getElementById('calendario');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth', // Vista inicial del calendario
+                initialView: 'timeGridWeek', // Vista inicial del calendario en semanal
                 locale: 'es', // Establece el idioma en español
+                slotMinTime: '10:00:00', // Hora mínima visible
+                slotMaxTime: '18:00:00', // Hora máxima visible
                 selectable: true, // Habilita la selección de fechas
                 select: function(info) {
-                    // Esta función se llama cuando se selecciona una fecha y hora
-                    var startDate = info.startStr; // Obtiene la fecha y hora de inicio seleccionada
-                    var endDate = info.endStr; // Obtiene la fecha y hora de finalización seleccionada (si corresponde)
-                    console.log("Fecha de inicio seleccionada:", startDate);
-                    console.log("Fecha de finalización seleccionada:", endDate);
-
-                    // Esta función se llama cuando se selecciona una fecha y hora
-            var selectedDate = info.start; // Obtiene la fecha seleccionada
-            console.log("Fecha seleccionada:", selectedDate);
-                    // Cambia a la vista de día y resalta el día seleccionado
-            calendar.changeView('dayGridDay', selectedDate);
+                    // Abrir el modal al seleccionar una fecha y hora
+                    openModal(info.start, info.end);
                 },
-                events: [
-                    // Aquí puedes agregar los eventos con las horas disponibles
-                    {
-                        title: 'disponible',
-                        start: '2024-05-20T10:00:00', // Ejemplo de hora disponible
-                        end: '2024-05-20T11:00:00',   // Ejemplo de hora disponible
-                        // Otros datos del evento, como color, descripción, etc.
-                    },
-                    {
-                        title: 'disponible',
-                        start: '2024-05-20T11:00:00', // Ejemplo de hora disponible
-                        end: '2024-05-20T12:00:00',   // Ejemplo de hora disponible
-                        // Otros datos del evento, como color, descripción, etc.
-                    },
-                    {
-                        title: 'disponible',
-                        start: '2024-05-20T13:00:00', // Ejemplo de hora disponible
-                        end: '2024-05-20T14:00:00',   // Ejemplo de hora disponible
-                        // Otros datos del evento, como color, descripción, etc.
-                    },
-                    // Puedes agregar más eventos para otras horas disponibles
-                ]
+                eventClick: function(info) {
+                    // Esta función se llama cuando se hace clic en un evento
+                    var eventTitle = info.event.title; // Obtiene el título del evento
+                    var startDate = info.event.start; // Obtiene la fecha y hora de inicio del evento
+                    var endDate = info.event.end; // Obtiene la fecha y hora de finalización del evento
+                    console.log("Evento seleccionado:", eventTitle);
+                    console.log("Fecha de inicio del evento:", startDate);
+                    console.log("Fecha de finalización del evento:", endDate);
+        
+                    // Guardar la hora seleccionada (aquí puedes añadir tu lógica para guardar la hora)
+                    // Ejemplo:
+                    openModal(startDate, endDate);
+                },
+                events: generateEvents([
+                    { startHour: '10:00', endHour: '10:30' },
+                    { startHour: '10:30', endHour: '11:00' },
+                    { startHour: '11:00', endHour: '11:30' },
+                    { startHour: '11:30', endHour: '12:00' },
+                    { startHour: '13:00', endHour: '13:30' },
+                    { startHour: '13:30', endHour: '14:00' },
+                    { startHour: '14:00', endHour: '14:30' },
+                    { startHour: '14:30', endHour: '15:00' },
+                    { startHour: '15:00', endHour: '15:30' },
+                    { startHour: '15:30', endHour: '16:00' },
+                    { startHour: '16:00', endHour: '16:30' },
+                    { startHour: '16:30', endHour: '17:00' }
+                ], 'disponible')
             });
             calendar.render(); // Renderiza el calendario
+        
+            function generateEvents(timeSlots, eventTitle) {
+                const events = [];
+                const start = new Date();
+                const end = new Date();
+                end.setDate(start.getDate() + 21); // Tres semanas desde hoy
+        
+                for (let date = new Date(start); date <= end; date.setDate(date.getDate() + 1)) {
+                    if (date.getDay() >= 1 && date.getDay() <= 6) { // De lunes a sábado
+                        const eventDate = date.toISOString().split('T')[0];
+                        // Eventos para la vista semanal y diaria
+                        timeSlots.forEach(slot => {
+                            events.push({
+                                title: eventTitle,
+                                start: `${eventDate}T${slot.startHour}:00`,
+                                end: `${eventDate}T${slot.endHour}:00`,
+                                display: 'auto'
+                            });
+                        });
+                    }
+                }
+                return events;
+            }
+            function openModal(startDate, endDate) {
+                // Obtén las referencias a los elementos del modal
+                var modal = document.getElementById('confirmModal');
+                var startDateElement = document.getElementById('selectedStartDate');
+                var endDateElement = document.getElementById('selectedEndDate');
+                var confirmButton = document.getElementById('confirmButton');
+            
+                // Asigna la fecha y hora seleccionada a los elementos del modal
+                startDateElement.textContent = startDate.toLocaleString();
+                endDateElement.textContent = endDate.toLocaleString();
+            
+                // Abre el modal
+                $(modal).modal('show');
+            
+                // Agrega un evento al botón "Confirmar" para redirigir a la siguiente página
+                confirmButton.addEventListener('click', function() {
+                    // Aquí puedes implementar la lógica para redirigir a la siguiente página
+                    // Por ejemplo:
+                     window.location.href = '../home/contactForm.html';
+                    // Asegúrate de ajustar la URL según tu estructura de archivos.
+                });
+            }
+            
+            
         });
+        
+
+        
         
      
             
